@@ -1,0 +1,69 @@
+<div class="col-md-5 offset-md-3">
+    <h3> Select Filters </h3>
+    <form (ngSubmit) = "onSubmit()">
+        <div class="form-group">
+            <label> Resident </label>
+            <input type="text" class="form-control" id="resident"
+                [(ngModel)] = "resident" name="resident">
+        </div>
+    
+        <div class="form-group">
+            <label> What Day? </label>
+            <input type="text" class="form-control" id="dayDue"
+                [(ngModel)] = "dayDue" name="dayDue">
+        </div>
+
+        <div class="form-group">
+            <label> Under how many minutes? </label>
+            <input type="text" class="form-control" id="timeLimit"
+                [(ngModel)] = "timeLimit" name="timeLimit">
+        </div>
+    
+        <button class="btn btn-success" type="submit"> Filter Chores </button>
+    </form>
+</div>
+
+<br>
+
+<div class="container">
+    <h3> Report</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Title </th>
+                <th> Resident </th>
+                <th> Due Day </th>
+                <th> Time Needed </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let chore of filteredChores">
+                <td> {{ chore.title }} </td>
+                <td> {{ chore.resident }} </td>
+                <td> {{ chore.dayDue }} </td>
+                <td> {{ chore.time }} minutes</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br>
+
+
+<div class="container">
+    <div class="averages">
+        <h2>Stats</h2>
+        <table class="avg-table">
+        <tbody>
+            <tr>
+                <th>Average Time per Chore</th>
+                <td align="right">{{ avgTime }}</td>
+            </tr>
+            <tr>
+                <th>Average Number of Chores Assigned per Resident</th>
+                <td align="right">{{ avgChores }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>

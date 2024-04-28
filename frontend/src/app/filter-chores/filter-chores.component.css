@@ -1,0 +1,12 @@
+.avg-table {
+    table-layout: fixed; /* Ensures fixed width distribution */
+    width: 60%; /* Set a width for the table (optional) */
+  }
+  
+th {
+border: 1px solid black; /* Add a black border around headers */
+}
+
+td {
+    border: 1px solid black; /* Add a black border around headers */
+    }

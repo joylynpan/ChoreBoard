@@ -1,0 +1,26 @@
+<div class="container">
+<h2> Chore List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th> Title </th>
+            <th> Resident </th>
+            <th> Due Day </th>
+            <th> Time Needed </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let chore of chores">
+            <td> {{ chore.title }} </td>
+            <td> {{ chore.resident }} </td>
+            <td> {{ chore.dayDue }} </td>
+            <td> {{ chore.time }} minutes</td>
+            <td>
+                <button (click) = "updateChore(chore.id)" class="btn btn-info"> Update </button>
+                <button (click) = "deleteChore(chore.id)" class="btn btn-danger" style="margin-left: 10px;"> Remove </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
