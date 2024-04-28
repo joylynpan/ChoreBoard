@@ -1,1 +1,13 @@
 application.properties
+# IDE and build artifacts
+.idea/
+.project
+.classpath
+target/
+build/
+
+# Angular specific
+dist/
+node_modules/
+npm-debug.log*
+yarn.lock
